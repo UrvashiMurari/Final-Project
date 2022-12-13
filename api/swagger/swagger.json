@@ -1,0 +1,180 @@
+{
+    "swagger": "2.0",
+      "info": {
+        "version": "1.0.0",
+        "title": "Final Project ",
+        "description": "Urvashi's documentation",
+        "license": {
+          "name": "MIT",
+          "url": "https://opensource.org/licenses/MIT"
+        }
+      },
+      "host": "localhost:3000",
+      "basePath": "/",
+    
+      "tags": [
+        {
+          "name": "Computer Vision API",
+          "description": "API for analyzing images"
+        }
+      ],
+      "schemes": ["http"],
+      "consumes": ["application/json"],
+      "produces": ["application/json"],
+
+      "paths": {
+        "/ocr":{
+       
+            "post": {
+                "summary": "Attach Image url for Optical Character Recognition",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Reading text from images",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ocr"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                        }
+                    }
+              }
+        },
+        "/analyze":{
+       
+            "post": 
+             {
+                "summary": "Attach Image url to analyze an image",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Analyzing Images",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/analyze"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                        }
+                    }
+              }
+        },
+        "/describe":{
+       
+            "post": {
+                "summary": "Attach Image url for description of an image",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Image Description",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/describe"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                        }
+                    }
+              }
+        },
+        "/detect":{
+       
+            "post": {
+                "summary": "Attach Image url for object detection",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Object detection",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/detect"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                        }
+                    }
+              }
+        },
+        
+      
+      "consumes": [
+        "application/json"
+      ]
+    },
+  
+    "definitions": {
+      "ocr": {
+          "type": "object",
+          "required": ["url"],
+          "properties": {
+              "url": {
+                  "type": "string"
+                  
+              }
+          }
+      },
+    
+    
+        "describe": {
+            "type": "object",
+            "required": ["url"],
+            "properties": {
+                "url": {
+                    "type": "string"
+                    
+                }
+            }
+        }
+      ,
+      
+        "analyze": {
+            "type": "object",
+            "required": ["url"],
+            "properties": {
+                "url": {
+                    "type": "string"
+                    
+                }
+            }
+        },
+        
+            "detect": {
+                "type": "object",
+                "required": ["url"],
+                "properties": {
+                    "url": {
+                        "type": "string"
+                        
+                    }
+                }
+            }
+
+        }
+          
+      
+}
