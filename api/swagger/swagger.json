@@ -3,18 +3,18 @@
       "info": {
         "version": "1.0.0",
         "title": "Final Project ",
-        "description": "Urvashi's documentation",
+        "description": "Final Project Swagger Documentation",
         "license": {
           "name": "MIT",
           "url": "https://opensource.org/licenses/MIT"
         }
       },
-      "host": "localhost:3000",
+      "host": "http://165.22.176.154:3000/",
       "basePath": "/",
     
       "tags": [
         {
-          "name": "Computer Vision API",
+          "name": "Computer Vision: An AI service that analyzes content in images",
           "description": "API for analyzing images"
         }
       ],
@@ -27,6 +27,7 @@
        
             "post": {
                 "summary": "Attach Image url for Optical Character Recognition",
+                "description": "OCR or Optical Character Recognition is also referred to as text recognition or text extraction.Machine-learning based OCR techniques allow you to extract printed or handwritten text from images, such as posters, street signs and product labels, as well as from documents like articles, reports, forms, and invoices. ",
                 "consumes": ["application/json"],
                 "produces": ["application/json"],
                 "parameters": [
@@ -52,6 +53,7 @@
             "post": 
              {
                 "summary": "Attach Image url to analyze an image",
+                "description": "This operation extracts a rich set of visual features based on the image content.",
                 "consumes": ["application/json"],
                 "produces": ["application/json"],
                 "parameters": [
@@ -76,6 +78,7 @@
        
             "post": {
                 "summary": "Attach Image url for description of an image",
+                "description": "This operation generates a description of an image in human readable language with complete sentences.Descriptions are ordered by their confidence score.",
                 "consumes": ["application/json"],
                 "produces": ["application/json"],
                 "parameters": [
@@ -100,6 +103,7 @@
        
             "post": {
                 "summary": "Attach Image url for object detection",
+                "description": "This operation Performs object detection on the specified image.A successful response will be returned in JSON.",
                 "consumes": ["application/json"],
                 "produces": ["application/json"],
                 "parameters": [
